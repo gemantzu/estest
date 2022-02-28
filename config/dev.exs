@@ -63,7 +63,7 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 config :estest, Estest.ElasticsearchCluster,
-  url: "http://localhost:9200",
+  url: "https://localhost:9200",
   username: "elastic",
   password: "lbuzf+wn2khA6-c68WI+",
   api: Elasticsearch.API.HTTP,
@@ -71,7 +71,7 @@ config :estest, Estest.ElasticsearchCluster,
   default_options: [
     timeout: 5_000,
     recv_timeout: 5_000,
-    hackney: [ssl: [{:versions, [:"tlsv1.2"]}]]
+    hackney: [ssl: [{:versions, [:"tlsv1.2"]}, {:cacertfile, "./cert.pem"}]]
   ],
   indexes: %{
     products: %{
