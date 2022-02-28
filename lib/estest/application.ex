@@ -15,9 +15,10 @@ defmodule Estest.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Estest.PubSub},
       # Start the Endpoint (http/https)
-      EstestWeb.Endpoint
+      EstestWeb.Endpoint,
       # Start a worker by calling: Estest.Worker.start_link(arg)
       # {Estest.Worker, arg}
+      Estest.ElasticsearchCluster
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

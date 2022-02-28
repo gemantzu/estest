@@ -61,3 +61,25 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :estest, Estest.ElasticsearchCluster,
+  url: "http://localhost:9200",
+  username: "elastic",
+  password: "lbuzf+wn2khA6-c68WI+",
+  api: Elasticsearch.API.HTTP,
+  json_library: Jason,
+  default_options: [
+    timeout: 5_000,
+    recv_timeout: 5_000,
+    hackney: [ssl: [{:versions, [:"tlsv1.2"]}]]
+  ],
+  indexes: %{
+    products: %{
+      settings: "priv/elasticsearch/products.json",
+      store: Estest.ElasticsearchStore,
+      sources: [Estest.Products.Product],
+      bulk_page_size: 5_000,
+      bulk_wait_interval: 15_000,
+      bulk_action: "create"
+    }
+  }
