@@ -1,15 +1,10 @@
 defmodule EstestWeb.ProductView do
   use EstestWeb, :view
 
-  def render("index.json", %{products: products}) do
+  def render("index.json", %{products: products, metadata: metadata}) do
     %{
       data: render_many(products, __MODULE__, "product.json"),
-      metadata: %{
-        before: "",
-        after: "",
-        limit: "",
-        total_count: 100
-      }
+      metadata: metadata
     }
   end
 
