@@ -1,0 +1,39 @@
+{
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "text"
+            },
+            "name": {
+                "type": "text"
+            },
+            "upc": {
+                "type": "text"
+            },
+            "tenant_id": {
+                "type": "text"
+            },
+            "network_id": {
+                "type": "text"
+            },
+            "type": {
+                "type": "text"
+            },
+            "sku": {
+                "type": "text"
+            },
+            "description": {
+                "type": "text"
+            },
+            "primary_unit": {
+                "type": "text"
+            },
+            "status": {
+                "type": "text"
+            },
+            "updated_at": {
+                "type": "date"
+            }
+        }
+    }
+}

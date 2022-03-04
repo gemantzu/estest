@@ -10,6 +10,7 @@ defmodule Estest.Application do
     children = [
       # Start the Ecto repository
       Estest.Repo,
+      Estest.ProductsRepo,
       # Start the Telemetry supervisor
       EstestWeb.Telemetry,
       # Start the PubSub system

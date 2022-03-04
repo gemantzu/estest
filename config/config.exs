@@ -8,7 +8,7 @@
 import Config
 
 config :estest,
-  ecto_repos: [Estest.Repo]
+  ecto_repos: [Estest.ProductsRepo, Estest.Repo]
 
 # Configures the endpoint
 config :estest, EstestWeb.Endpoint,
